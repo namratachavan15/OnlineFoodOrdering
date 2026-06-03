@@ -1,0 +1,17 @@
+<img width="1451" height="1891" alt="restaurantdetails" src="https://github.com/user-attachments/assets/aae673bf-5cd2-4ecb-a6c7-023403985ff9" />
+<img width="1507" height="1015" alt="myprofilepage" src="https://github.com/user-attachments/assets/b71448de-8bce-4acd-9146-869daf46c057" />
+<img width="1507" height="1486" alt="mypayments" src="https://github.com/user-attachments/assets/3681a89d-68f3-4ee4-ac94-906b5a865e94" />
+<img width="1507" height="1660" alt="myorder" src="https://github.com/user-attachments/assets/068f0b78-648a-49f3-99fa-98ec4027a3e9" />
+<img width="1507" height="999" alt="myfavouriterestaurant" src="https://github.com/user-attachments/assets/a7b64952-dfaf-4d1d-b313-8df99a18a015" />
+<img width="1507" height="1578" alt="myaddresses" src="https://github.com/user-attachments/assets/d63e50ac-1f86-4c31-8354-46317cea6ab7" />
+<img width="1507" height="1195" alt="cartpage" src="https://github.com/user-attachments/assets/73fa4a5c-3dfa-440a-8eca-598fabd1f474" />
+<img width="1497" height="914" alt="admin_restaurantdetails" src="https://github.com/user-attachments/assets/6d970b3d-42bf-4a26-8e60-a83100fe842c" />
+<img width="1501" height="914" alt="admin_orders" src="https://github.com/user-attachments/assets/4d3dcd8e-b287-4762-b4e9-4cdc1980316d" />
+<img width="1501" height="915" alt="admin_menu" src="https://github.com/user-attachments/assets/83a2e3c1-e282-4108-817a-38f73dd74ab3" />
+<img width="1491" height="878" alt="admin_Ingredients" src="https://github.com/user-attachments/assets/66df5c84-20f4-4ad9-830c-d0411d09f5c5" />
+<img width="1507" height="851" alt="admin_foodcategory" src="https://github.com/user-attachments/assets/153b8af3-381f-430b-888a-df192b694975" />
+<img width="1500" height="806" alt="admin_event" src="https://github.com/user-attachments/assets/261080d9-3bf2-4f54-b93f-aa445e2f54fe" />
+<img width="1504" height="917" alt="admin_dashboard" src="https://github.com/user-attachments/assets/5b5a2d2e-61e8-41c7-bb15-d8bfc624ac62" />
+<img width="487" height="895" alt="loginpage" src="https://github.com/user-attachments/assets/fc3b462a-0f32-4be1-b33d-72184e9cdb18" />
+<img width="402" height="911" alt="registerpage" src="https://github.com/user-attachments/assets/07215597-5df4-4ebd-8c27-a1fc49761f6e" />
+<img width="1305" height="2518" alt="homepage" src="https://github.com/user-attachments/assets/3398123c-ebc7-4d22-9fbf-39cd53fb803b" />
