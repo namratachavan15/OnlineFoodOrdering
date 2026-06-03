@@ -1,3 +1,4 @@
+<img width="1305" height="2518" alt="homepage" src="https://github.com/user-attachments/assets/3398123c-ebc7-4d22-9fbf-39cd53fb803b" />
 <img width="1451" height="1891" alt="restaurantdetails" src="https://github.com/user-attachments/assets/aae673bf-5cd2-4ecb-a6c7-023403985ff9" />
 <img width="1507" height="1015" alt="myprofilepage" src="https://github.com/user-attachments/assets/b71448de-8bce-4acd-9146-869daf46c057" />
 <img width="1507" height="1486" alt="mypayments" src="https://github.com/user-attachments/assets/3681a89d-68f3-4ee4-ac94-906b5a865e94" />
@@ -14,4 +15,4 @@
 <img width="1504" height="917" alt="admin_dashboard" src="https://github.com/user-attachments/assets/5b5a2d2e-61e8-41c7-bb15-d8bfc624ac62" />
 <img width="487" height="895" alt="loginpage" src="https://github.com/user-attachments/assets/fc3b462a-0f32-4be1-b33d-72184e9cdb18" />
 <img width="402" height="911" alt="registerpage" src="https://github.com/user-attachments/assets/07215597-5df4-4ebd-8c27-a1fc49761f6e" />
-<img width="1305" height="2518" alt="homepage" src="https://github.com/user-attachments/assets/3398123c-ebc7-4d22-9fbf-39cd53fb803b" />
+
