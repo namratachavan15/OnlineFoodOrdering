@@ -1,0 +1,141 @@
+/* ProfileNavigation.css - Cleaned up */
+
+/* Navigation Container */
+.sidebar {
+  background: linear-gradient(180deg, #0D0D0D 0%, #050505 100%) !important;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+}
+
+/* Nav Items Styling */
+.nav {
+  padding: 1rem 0;
+}
+
+.nav-item {
+  margin: 0.25rem 0.75rem;
+  border-radius: 12px;
+  transition: var(--profile-transition);
+}
+
+.nav-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  padding: 0.875rem 1rem !important;
+  border-radius: 12px !important;
+  color: #888888 !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  transition: var(--profile-transition) !important;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+.nav-link.active {
+  background: linear-gradient(90deg, rgba(233, 30, 99, 0.15), transparent) !important;
+  color: #E91E63 !important;
+}
+
+.nav-link svg {
+  font-size: 1.125rem;
+  transition: var(--profile-transition);
+}
+
+.nav-link:hover svg,
+.nav-link.active svg {
+  transform: scale(1.1);
+  color: #E91E63;
+}
+
+/* Divider Styling */
+hr.my-2 {
+  margin: 0.5rem 1rem !important;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Active Tab Indicator */
+.nav-link.active {
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: #E91E63;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #E91E63;
+  border-radius: 4px;
+}
+
+/* Animation for nav items */
+.nav-item {
+  animation: fadeInLeft 0.3s ease forwards;
+  opacity: 0;
+}
+
+.nav-item:nth-child(1) { animation-delay: 0.05s; }
+.nav-item:nth-child(2) { animation-delay: 0.1s; }
+.nav-item:nth-child(3) { animation-delay: 0.15s; }
+.nav-item:nth-child(4) { animation-delay: 0.2s; }
+.nav-item:nth-child(5) { animation-delay: 0.25s; }
+.nav-item:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover effects for better UX */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 70%;
+  background: #E91E63;
+  border-radius: 0 4px 4px 0;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  width: 3px;
+}

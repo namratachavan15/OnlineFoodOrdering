@@ -1,0 +1,335 @@
+/* Favorites.css - Professional Styling */
+
+:root {
+  --fav-primary: #E91E63;
+  --fav-primary-dark: #C2185B;
+  --fav-primary-light: #FCE4EC;
+  --fav-dark: #0A0A0A;
+  --fav-card-bg: #111111;
+  --fav-surface: #1A1A1A;
+  --fav-text: #FFFFFF;
+  --fav-text-muted: #888888;
+  --fav-border: rgba(255, 255, 255, 0.08);
+  --fav-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --fav-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --fav-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Favorites Container */
+.favorites-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeInUp 0.4s ease;
+  padding: 0 1rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.section-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff, var(--fav-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header h2 svg {
+  font-size: 1.5rem;
+  color: var(--fav-primary);
+  animation: heartBeat 1.5s ease infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.section-header p {
+  color: var(--fav-text-muted);
+  font-size: 0.875rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header p::before,
+.section-header p::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 1px;
+  background: var(--fav-border);
+}
+
+.section-header p::before {
+  right: calc(100% + 10px);
+}
+
+.section-header p::after {
+  left: calc(100% + 10px);
+}
+
+/* Favorites Grid */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Loading Container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.loading-container .spinner-border {
+  width: 48px;
+  height: 48px;
+  border-width: 3px;
+}
+
+.loading-container p {
+  color: var(--fav-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--fav-card-bg);
+  border-radius: 24px;
+  border: 1px solid var(--fav-border);
+  animation: fadeInUp 0.4s ease;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.empty-state h3 {
+  font-size: 1.25rem;
+  color: var(--fav-text);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--fav-text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.empty-action-btn {
+  background: linear-gradient(135deg, var(--fav-primary), var(--fav-primary-dark));
+  border: none;
+  border-radius: 40px;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--fav-transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.empty-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
+/* Restaurant Card Overrides for Favorites Page */
+.favorites-grid .restaurant-card {
+  animation: fadeInScale 0.4s ease forwards;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.favorites-grid .restaurant-card:nth-child(1) { animation-delay: 0.05s; }
+.favorites-grid .restaurant-card:nth-child(2) { animation-delay: 0.1s; }
+.favorites-grid .restaurant-card:nth-child(3) { animation-delay: 0.15s; }
+.favorites-grid .restaurant-card:nth-child(4) { animation-delay: 0.2s; }
+.favorites-grid .restaurant-card:nth-child(5) { animation-delay: 0.25s; }
+.favorites-grid .restaurant-card:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover effect for favorite cards */
+.favorites-grid .restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--fav-shadow-hover);
+  border-color: rgba(233, 30, 99, 0.3);
+}
+
+/* Favorite count badge */
+.fav-count-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--fav-primary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  border-radius: 20px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .favorites-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .favorites-container {
+    padding: 0 0.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .favorites-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  
+  .section-header p::before,
+  .section-header p::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .favorites-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .empty-state {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+  
+  .empty-icon {
+    font-size: 3.5rem;
+  }
+  
+  .empty-state h3 {
+    font-size: 1rem;
+  }
+  
+  .empty-state p {
+    font-size: 0.75rem;
+  }
+  
+  .empty-action-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation for removing from favorites */
+.fav-removing {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* Custom scrollbar for favorites */
+.favorites-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.favorites-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.favorites-container::-webkit-scrollbar-thumb {
+  background: var(--fav-primary);
+  border-radius: 10px;
+}
+
+/* Tooltip for favorite action */
+.fav-tooltip {
+  position: relative;
+}
+
+.fav-tooltip:hover::after {
+  content: 'Remove from favorites';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+}

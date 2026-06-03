@@ -1,0 +1,25 @@
+/* .login-form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: #0D0D0D;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 450px) {
+  .login-box {
+    padding: 16px;
+    
+  }
+
+  .form-control {
+    font-size: 1rem;
+  }
+} */

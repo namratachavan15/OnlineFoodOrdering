@@ -1,0 +1,417 @@
+/* RestaurantCard.css - Premium Glassmorphism Design */
+
+:root {
+  --glass-bg: rgba(20, 20, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --primary-gradient: linear-gradient(135deg, #E91E63, #FF6B6B);
+  --secondary-gradient: linear-gradient(135deg, #FF9800, #FFB74D);
+  --success-glow: 0 0 15px rgba(76, 175, 80, 0.5);
+  --danger-glow: 0 0 15px rgba(244, 67, 54, 0.5);
+}
+
+/* Main Card Container */
+.restaurant-card-glass {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-card-glass:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(233, 30, 99, 0.5);
+}
+
+/* Glowing Border Effect */
+.card-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: var(--primary-gradient);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.restaurant-card-glass:hover .card-border-glow {
+  opacity: 1;
+}
+
+/* Image Section */
+.card-image-section {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/11;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.restaurant-image-glass {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.restaurant-image-glass.loaded {
+  opacity: 1;
+}
+
+.restaurant-card-glass:hover .restaurant-image-glass {
+  transform: scale(1.1);
+}
+
+/* Image Skeleton */
+.image-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Discount Badge */
+.discount-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: var(--secondary-gradient);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+/* Status Chip */
+.status-chip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.status-chip.open {
+  background: rgba(76, 175, 80, 0.9);
+  color: white;
+  box-shadow: var(--success-glow);
+}
+
+.status-chip.closed {
+  background: rgba(244, 67, 54, 0.9);
+  color: white;
+  box-shadow: var(--danger-glow);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Floating Favorite Button */
+.favorite-glass-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.favorite-glass-btn:hover {
+  transform: scale(1.15);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.favorite-icon-glass {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.favorite-icon-glass.active {
+  color: #ff4757;
+  animation: heartbeat 0.4s ease;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Card Content */
+.card-content-glass {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Restaurant Header */
+.restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.restaurant-name-glass {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.3;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Rating Component */
+.rating-glass {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 193, 7, 0.15);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #FFC107;
+  white-space: nowrap;
+}
+
+.star-icon {
+  font-size: 0.6rem;
+}
+
+.rating-count {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.6rem;
+}
+
+/* Description */
+.restaurant-description-glass {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Restaurant Details */
+.restaurant-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.detail-icon {
+  font-size: 0.6rem;
+  color: var(--primary-color);
+}
+
+.detail-divider {
+  width: 1px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Cuisine Tags */
+.cuisine-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.cuisine-tag {
+  font-size: 0.6rem;
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.cuisine-tag:hover {
+  background: rgba(233, 30, 99, 0.2);
+  color: var(--primary-color);
+}
+
+/* Price Indicator */
+.price-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.price-bar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.price-fill {
+  height: 100%;
+  background: var(--primary-gradient);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.price-text {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .restaurant-card-glass {
+    border-radius: 20px;
+  }
+  
+  .card-content-glass {
+    padding: 0.875rem;
+  }
+  
+  .restaurant-name-glass {
+    font-size: 0.9rem;
+  }
+  
+  .discount-badge {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+  
+  .status-chip {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+  
+  .favorite-glass-btn {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .favorite-icon-glass {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-card-glass {
+    border-radius: 16px;
+  }
+  
+  .cuisine-tag {
+    font-size: 0.55rem;
+    padding: 2px 6px;
+  }
+  
+  .rating-glass {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+}
+
+/* Hover Effects Summary */
+.restaurant-card-glass:hover .discount-badge {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Custom Scrollbar for Cuisine Tags (if needed) */
+.cuisine-tags::-webkit-scrollbar {
+  height: 2px;
+}
+
+.cuisine-tags::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.cuisine-tags::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
